@@ -5,66 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AgriCraft - Global Marketplace for Value-Added Farm Goods</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="assets/css/theme.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand fw-semibold" href="index.html">AgriCraft</a>
+        <a class="navbar-brand fw-semibold" href="index.html">
+          <i class="fas fa-seedling me-2"></i>AgriCraft
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="Global-Marketplace/categories.html">Marketplace</a></li>
-            <li class="nav-item"><a class="nav-link" href="Home/about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="Home/contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="Global-Marketplace/categories.html"><i class="fas fa-store me-1"></i>Marketplace</a></li>
+            <li class="nav-item"><a class="nav-link" href="Home/about.html"><i class="fas fa-info-circle me-1"></i>About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Home/contact.html"><i class="fas fa-envelope me-1"></i>Contact</a></li>
           </ul>
           <div class="d-flex gap-2">
-            <a class="btn btn-outline-primary" href="Home/Login-Register/buyer-signup.html">Sign up</a>
-            <a class="btn btn-primary" href="Home/Login-Register/admin-login.html">Log in</a>
+            <button class="btn btn-outline-secondary theme-toggle" type="button" data-bs-toggle="tooltip" title="Toggle theme">
+              <i class="fas fa-moon"></i>
+            </button>
+            <a class="btn btn-outline-primary" href="Home/Login-Register/register.html"><i class="fas fa-user-plus me-1"></i>Sign up</a>
+            <a class="btn btn-primary" href="Home/Login-Register/login.html"><i class="fas fa-sign-in-alt me-1"></i>Log in</a>
           </div>
         </div>
       </div>
     </nav>
 
     <main class="container py-5 min-h-main">
-      <div class="row align-items-center g-5">
+      <!-- Hero Section -->
+      <div class="row align-items-center g-5 mb-5">
         <div class="col-lg-6">
           <h1 class="display-5 fw-bold page-header pb-3 mb-4">Turn Crops into Global Brands</h1>
-          <p class="lead">Help farmers create value-added products—jams, snacks, crafts—and reach buyers worldwide. Manage listings, orders, and growth in one GitHub-dark themed dashboard.</p>
+          <p class="lead">Help farmers create value-added products—jams, snacks, crafts—and reach buyers worldwide. Manage listings, orders, and growth in one comprehensive dashboard.</p>
           <div class="d-flex gap-3 mt-4">
-            <a class="btn btn-primary btn-lg" href="Global-Marketplace/categories.html">Explore Marketplace</a>
-            <a class="btn btn-outline-primary btn-lg" href="Home/Login-Register/farmer-signup.html">Become a Seller</a>
+            <a class="btn btn-primary btn-lg" href="Global-Marketplace/categories.html">
+              <i class="fas fa-search me-2"></i>Explore Marketplace
+            </a>
+            <a class="btn btn-outline-primary btn-lg" href="Home/Login-Register/register.html">
+              <i class="fas fa-user-plus me-2"></i>Get Started
+            </a>
           </div>
-          <div class="mt-4 text-warning small">Admin, Farmer, and Buyer roles supported.</div>
+          <div class="mt-4">
+            <span class="badge bg-success me-2"><i class="fas fa-check me-1"></i>Farmer</span>
+            <span class="badge bg-info me-2"><i class="fas fa-check me-1"></i>Buyer</span>
+            <span class="badge bg-warning"><i class="fas fa-check me-1"></i>Admin</span>
+          </div>
         </div>
         <div class="col-lg-6">
-          <div class="card p-4">
-            <h2 class="h4">Highlights</h2>
-            <ul class="mt-3 mb-0">
-              <li>Approve and manage listings, users, and disputes</li>
-              <li>Inventory, orders, chat, and payouts for farmers</li>
-              <li>Search, filters, secure checkout, and reviews for buyers</li>
-            </ul>
+          <div class="card dashboard-card p-4">
+            <h2 class="h4 mb-3"><i class="fas fa-star me-2 text-warning"></i>Platform Highlights</h2>
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-shield-alt text-primary me-3"></i>
+                  <div>
+                    <strong>Secure Management</strong>
+                    <p class="small text-muted mb-0">Approve and manage listings, users, and disputes</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-chart-line text-success me-3"></i>
+                  <div>
+                    <strong>Growth Tools</strong>
+                    <p class="small text-muted mb-0">Inventory, orders, chat, and payouts for farmers</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-shopping-cart text-info me-3"></i>
+                  <div>
+                    <strong>Smart Shopping</strong>
+                    <p class="small text-muted mb-0">Search, filters, secure checkout, and reviews</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="row g-4 mb-5">
+        <div class="col-12">
+          <h2 class="text-center mb-5">Why Choose AgriCraft?</h2>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card stat-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Global Reach</h5>
+              <p class="card-text">Connect with buyers and sellers from around the world</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card stat-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-lock fa-3x text-success mb-3"></i>
+              <h5 class="card-title">Secure Payments</h5>
+              <p class="card-text">Safe and reliable payment processing for all transactions</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card stat-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-headset fa-3x text-info mb-3"></i>
+              <h5 class="card-title">24/7 Support</h5>
+              <p class="card-text">Round-the-clock customer support for all users</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="row g-4">
+        <div class="col-12">
+          <h3 class="text-center mb-4">Get Started Today</h3>
+        </div>
+        <div class="col-lg-4">
+          <div class="card action-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-tractor fa-3x text-success mb-3"></i>
+              <h5 class="card-title">For Farmers</h5>
+              <p class="card-text">Start selling your value-added products and grow your business</p>
+              <a href="Home/Login-Register/register.html" class="btn btn-success">
+                <i class="fas fa-arrow-right me-2"></i>Start Selling
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card action-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-shopping-bag fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">For Buyers</h5>
+              <p class="card-text">Discover amazing products from farmers worldwide</p>
+              <a href="Global-Marketplace/categories.html" class="btn btn-primary">
+                <i class="fas fa-search me-2"></i>Browse Products
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card action-card h-100">
+            <div class="card-body text-center p-4">
+              <i class="fas fa-cogs fa-3x text-warning mb-3"></i>
+              <h5 class="card-title">For Admins</h5>
+              <p class="card-text">Manage the platform and ensure smooth operations</p>
+              <a href="Home/Login-Register/login.html" class="btn btn-warning">
+                <i class="fas fa-sign-in-alt me-2"></i>Admin Login
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
     <footer class="py-4 mt-5">
-      <div class="container d-flex justify-content-between align-items-center">
-        <span class="muted">© 2025 AgriCraft</span>
-        <div class="d-flex gap-3">
-          <a href="https://github.com" target="_blank" rel="noopener" class="link-light">GitHub</a>
-          <a href="#" class="link-light">Privacy</a>
-          <a href="#" class="link-light">Terms</a>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <span class="muted">© 2025 AgriCraft - Connecting Farmers with Global Markets</span>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="d-flex justify-content-md-end gap-3">
+              <a href="https://github.com" target="_blank" rel="noopener" class="link-light" data-bs-toggle="tooltip" title="View on GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="Home/contact.html" class="link-light" data-bs-toggle="tooltip" title="Contact Us">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="#" class="link-light" data-bs-toggle="tooltip" title="Privacy Policy">
+                <i class="fas fa-shield-alt"></i>
+              </a>
+              <a href="#" class="link-light" data-bs-toggle="tooltip" title="Terms of Service">
+                <i class="fas fa-file-contract"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/performance.js"></script>
   </body>
   </html>
 

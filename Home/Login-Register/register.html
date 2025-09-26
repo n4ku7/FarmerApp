@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register - AgriCraft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/theme.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="../../index.html">
+          <i class="fas fa-seedling me-2"></i>AgriCraft
+        </a>
+      </div>
+    </nav>
+    
+    <main class="container py-5 min-h-main">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <!-- Role Selection Card -->
+          <div class="card register-card mb-4" id="roleSelectionCard">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                <h1 class="h3 mb-2">Join AgriCraft</h1>
+                <p class="text-muted">Choose your account type to get started</p>
+              </div>
+              
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <button class="btn btn-outline-primary w-100 role-btn h-100" data-role="farmer">
+                    <i class="fas fa-tractor fa-2x mb-3"></i>
+                    <div class="d-flex flex-column align-items-center">
+                      <strong>Farmer</strong>
+                      <small class="text-muted">Sell your value-added products</small>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-outline-primary w-100 role-btn h-100" data-role="buyer">
+                    <i class="fas fa-shopping-cart fa-2x mb-3"></i>
+                    <div class="d-flex flex-column align-items-center">
+                      <strong>Buyer</strong>
+                      <small class="text-muted">Discover and buy products</small>
+                    </div>
+                  </button>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-outline-primary w-100 role-btn h-100" data-role="admin">
+                    <i class="fas fa-cog fa-2x mb-3"></i>
+                    <div class="d-flex flex-column align-items-center">
+                      <strong>Admin</strong>
+                      <small class="text-muted">Manage the platform</small>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              
+              <hr class="my-4">
+              <p class="text-center mb-0">
+                Already have an account? 
+                <a href="login.html" class="text-primary fw-medium">Login here</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Registration Form Card -->
+          <div class="card register-card d-none" id="registerFormCard">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-4">
+                <button class="btn btn-outline-secondary btn-sm me-3" id="backToRoles">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <div>
+                  <h1 class="h3 mb-1" id="registerTitle">Create Account</h1>
+                  <p class="text-muted small mb-0" id="registerSubtitle">Fill in your details</p>
+                </div>
+              </div>
+              
+              <form id="registerForm">
+                <!-- Common Fields -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Full Name</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                      <input type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                      <input type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                      <input type="password" class="form-control" placeholder="Create password" required>
+                      <button class="btn btn-outline-secondary" type="button" id="togglePassword1">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                      <input type="password" class="form-control" placeholder="Confirm password" required>
+                      <button class="btn btn-outline-secondary" type="button" id="togglePassword2">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Role-specific Fields -->
+                <div id="farmerFields" class="role-specific-fields d-none">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Farm Name</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-home"></i></span>
+                        <input type="text" class="form-control" placeholder="e.g. Green Valley Farms">
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Primary Product Category</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                        <select class="form-select">
+                          <option value="">Select category</option>
+                          <option value="processed-foods">Processed Foods</option>
+                          <option value="handmade-goods">Handmade Goods</option>
+                          <option value="dairy-cheese">Dairy & Cheese</option>
+                          <option value="grains-snacks">Grains & Snacks</option>
+                          <option value="beverages">Beverages</option>
+                          <option value="preserves">Preserves & Jams</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Farm Description</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+                      <textarea class="form-control" rows="3" placeholder="Tell us about your farm and products"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="buyerFields" class="role-specific-fields d-none">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Phone Number</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input type="tel" class="form-control" placeholder="+1 (555) 123-4567">
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Location</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        <input type="text" class="form-control" placeholder="City, State">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Interests</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-heart"></i></span>
+                      <select class="form-select" multiple>
+                        <option value="organic">Organic Products</option>
+                        <option value="local">Local Products</option>
+                        <option value="handmade">Handmade Items</option>
+                        <option value="processed">Processed Foods</option>
+                        <option value="dairy">Dairy Products</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="adminFields" class="role-specific-fields d-none">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Department</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-building"></i></span>
+                        <select class="form-select">
+                          <option value="">Select department</option>
+                          <option value="operations">Operations</option>
+                          <option value="support">Customer Support</option>
+                          <option value="finance">Finance</option>
+                          <option value="marketing">Marketing</option>
+                          <option value="technical">Technical</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label">Employee ID</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                        <input type="text" class="form-control" placeholder="Enter employee ID">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Admin Access Level</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fas fa-shield-alt"></i></span>
+                      <select class="form-select">
+                        <option value="">Select access level</option>
+                        <option value="super-admin">Super Admin</option>
+                        <option value="admin">Admin</option>
+                        <option value="moderator">Moderator</option>
+                        <option value="support">Support</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="mb-4">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                    <label class="form-check-label" for="agreeTerms">
+                      I agree to the <a href="#" class="text-primary">Terms of Service</a> and 
+                      <a href="#" class="text-primary">Privacy Policy</a>
+                    </label>
+                  </div>
+                </div>
+
+                <button class="btn btn-primary w-100 mb-3" type="submit">
+                  <i class="fas fa-user-plus me-2"></i>Create Account
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="py-4 mt-5">
+      <div class="container text-center">
+        <span class="muted">© 2025 AgriCraft</span>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const roleSelectionCard = document.getElementById('roleSelectionCard');
+        const registerFormCard = document.getElementById('registerFormCard');
+        const roleBtns = document.querySelectorAll('.role-btn');
+        const backToRoles = document.getElementById('backToRoles');
+        const registerTitle = document.getElementById('registerTitle');
+        const registerSubtitle = document.getElementById('registerSubtitle');
+        const registerForm = document.getElementById('registerForm');
+        const roleSpecificFields = document.querySelectorAll('.role-specific-fields');
+        const togglePassword1 = document.getElementById('togglePassword1');
+        const togglePassword2 = document.getElementById('togglePassword2');
+        const passwordInput1 = document.querySelector('input[type="password"]:first-of-type');
+        const passwordInput2 = document.querySelector('input[type="password"]:last-of-type');
+
+        // Role selection
+        roleBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const role = this.dataset.role;
+            showRegisterForm(role);
+          });
+        });
+
+        // Back to role selection
+        backToRoles.addEventListener('click', function() {
+          roleSelectionCard.classList.remove('d-none');
+          registerFormCard.classList.add('d-none');
+        });
+
+        // Password visibility toggles
+        togglePassword1.addEventListener('click', function() {
+          togglePasswordVisibility(passwordInput1, this);
+        });
+
+        togglePassword2.addEventListener('click', function() {
+          togglePasswordVisibility(passwordInput2, this);
+        });
+
+        // Form submission
+        registerForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const role = this.dataset.role;
+          handleRegistration(role);
+        });
+
+        function showRegisterForm(role) {
+          const roleNames = {
+            farmer: 'Farmer',
+            buyer: 'Buyer',
+            admin: 'Admin'
+          };
+          
+          registerTitle.textContent = `Create ${roleNames[role]} Account`;
+          registerSubtitle.textContent = `Join as a ${roleNames[role].toLowerCase()}`;
+          registerForm.dataset.role = role;
+          
+          // Hide all role-specific fields
+          roleSpecificFields.forEach(field => field.classList.add('d-none'));
+          
+          // Show relevant fields
+          document.getElementById(role + 'Fields').classList.remove('d-none');
+          
+          roleSelectionCard.classList.add('d-none');
+          registerFormCard.classList.remove('d-none');
+        }
+
+        function togglePasswordVisibility(input, button) {
+          const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+          input.setAttribute('type', type);
+          const icon = button.querySelector('i');
+          icon.classList.toggle('fa-eye');
+          icon.classList.toggle('fa-eye-slash');
+        }
+
+        function handleRegistration(role) {
+          // Show loading state
+          const submitBtn = registerForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating Account...';
+          submitBtn.disabled = true;
+
+          // Simulate registration process
+          setTimeout(() => {
+            const dashboards = {
+              farmer: '../../Farmer-Dashboard/index.html',
+              buyer: '../../Buyer-Dashboard/index.html',
+              admin: '../../Admin-Dashboard/index.html'
+            };
+            
+            // Show success message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success alert-dismissible fade show';
+            alert.innerHTML = `
+              <i class="fas fa-check-circle me-2"></i>
+              Account created successfully! Redirecting to your dashboard...
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            registerForm.insertBefore(alert, registerForm.firstChild);
+            
+            // Redirect after delay
+            setTimeout(() => {
+              window.location.href = dashboards[role];
+            }, 2000);
+          }, 1500);
+        }
+      });
+    </script>
+  </body>
+</html>
