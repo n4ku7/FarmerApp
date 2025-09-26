@@ -1,9 +1,10 @@
-:root {
-  /* Dark theme (default) */
+/* Dark theme (default) */
+:root,
+[data-bs-theme="dark"] {
   --bg-canvas: #0d1117;
   --bg-subtle: #161b22;
   --border-default: #30363d;
-  --fg-default: #c9d1d9;
+  --fg-default: #f0f6fc;
   --fg-muted: #8b949e;
   --fg-accent: #58a6ff;
   --success: #3fb950;
@@ -19,13 +20,39 @@
 [data-bs-theme="light"] {
   --bg-canvas: #ffffff;
   --bg-subtle: #f8f9fa;
-  --border-default: #dee2e6;
+  --border-default: #e9ecef;
   --fg-default: #212529;
   --fg-muted: #6c757d;
   --fg-accent: #0d6efd;
   --success: #198754;
   --danger: #dc3545;
-  --warning: #ffc107;
+  --warning: #fd7e14;
+}
+
+/* Force light theme when light class is applied */
+.light-theme {
+  --bg-canvas: #ffffff !important;
+  --bg-subtle: #f8f9fa !important;
+  --border-default: #e9ecef !important;
+  --fg-default: #212529 !important;
+  --fg-muted: #6c757d !important;
+  --fg-accent: #0d6efd !important;
+  --success: #198754 !important;
+  --danger: #dc3545 !important;
+  --warning: #fd7e14 !important;
+}
+
+/* Force dark theme when dark class is applied */
+.dark-theme {
+  --bg-canvas: #0d1117 !important;
+  --bg-subtle: #161b22 !important;
+  --border-default: #30363d !important;
+  --fg-default: #f0f6fc !important;
+  --fg-muted: #8b949e !important;
+  --fg-accent: #58a6ff !important;
+  --success: #3fb950 !important;
+  --danger: #f85149 !important;
+  --warning: #d29922 !important;
 }
 
 html, body {
@@ -268,11 +295,20 @@ body {
 /* Enhanced navbar */
 .navbar {
   backdrop-filter: blur(10px);
-  background-color: rgba(22, 27, 34, 0.9) !important;
+  background-color: var(--bg-subtle) !important;
+  border-bottom: 1px solid var(--border-default);
 }
 
+/* Light theme navbar adjustments */
 [data-bs-theme="light"] .navbar {
-  background-color: rgba(248, 249, 250, 0.9) !important;
+  background-color: var(--bg-subtle) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme navbar adjustments */
+[data-bs-theme="dark"] .navbar {
+  background-color: var(--bg-subtle) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Light theme specific adjustments */
@@ -302,6 +338,41 @@ body {
   background-color: #ffffff;
   border-color: var(--fg-accent);
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Additional light theme fixes */
+[data-bs-theme="light"] .navbar .nav-link,
+[data-bs-theme="light"] .navbar-brand {
+  color: var(--fg-default) !important;
+}
+
+[data-bs-theme="light"] .navbar .nav-link:hover,
+[data-bs-theme="light"] .navbar-brand:hover {
+  color: var(--fg-accent) !important;
+}
+
+[data-bs-theme="light"] .btn-outline-primary {
+  color: var(--fg-accent);
+  border-color: var(--fg-accent);
+}
+
+[data-bs-theme="light"] .btn-outline-primary:hover {
+  background-color: var(--fg-accent);
+  border-color: var(--fg-accent);
+  color: white;
+}
+
+[data-bs-theme="light"] .text-muted {
+  color: var(--fg-muted) !important;
+}
+
+[data-bs-theme="light"] .muted {
+  color: var(--fg-muted) !important;
+}
+
+[data-bs-theme="light"] footer {
+  background-color: var(--bg-subtle) !important;
+  border-top: 1px solid var(--border-default);
 }
 
 /* Theme toggle button */

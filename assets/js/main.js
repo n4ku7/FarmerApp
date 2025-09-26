@@ -197,7 +197,11 @@ function clearSearchResults(targetSelector) {
 function initializeThemePersistence() {
   // Get saved theme or default to dark
   const savedTheme = localStorage.getItem('theme') || 'dark';
+  
+  // Apply theme using both data attribute and class for maximum compatibility
   document.documentElement.setAttribute('data-bs-theme', savedTheme);
+  document.documentElement.className = document.documentElement.className.replace(/dark-theme|light-theme/g, '');
+  document.documentElement.classList.add(`${savedTheme}-theme`);
   
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
@@ -208,14 +212,16 @@ function initializeThemePersistence() {
     themeToggle.addEventListener('click', (e) => {
       e.preventDefault();
       
-      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       // Add transition class for smooth animation
       document.body.classList.add('theme-transitioning');
       
-      // Update theme
+      // Update theme using both methods for maximum compatibility
       document.documentElement.setAttribute('data-bs-theme', newTheme);
+      document.documentElement.className = document.documentElement.className.replace(/dark-theme|light-theme/g, '');
+      document.documentElement.classList.add(`${newTheme}-theme`);
       localStorage.setItem('theme', newTheme);
       
       // Update toggle icon with animation
