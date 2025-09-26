@@ -1,4 +1,5 @@
 :root {
+  /* Dark theme (default) */
   --bg-canvas: #0d1117;
   --bg-subtle: #161b22;
   --border-default: #30363d;
@@ -8,10 +9,38 @@
   --success: #3fb950;
   --danger: #f85149;
   --warning: #d29922;
+  
+  /* Transition properties */
+  --transition-duration: 0.3s;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light theme variables */
+[data-bs-theme="light"] {
+  --bg-canvas: #ffffff;
+  --bg-subtle: #f8f9fa;
+  --border-default: #dee2e6;
+  --fg-default: #212529;
+  --fg-muted: #6c757d;
+  --fg-accent: #0d6efd;
+  --success: #198754;
+  --danger: #dc3545;
+  --warning: #ffc107;
 }
 
 html, body {
   height: 100%;
+}
+
+/* Global transition for theme changes */
+*,
+*::before,
+*::after {
+  transition: 
+    background-color var(--transition-duration) var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing),
+    box-shadow var(--transition-duration) var(--transition-timing);
 }
 
 body {
@@ -200,11 +229,20 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--fg-accent) 0%, #4a90e2 100%);
+  background: linear-gradient(135deg, var(--fg-accent) 0%, var(--fg-accent) 100%);
   border: none;
 }
 
 .btn-primary:hover {
+  background: linear-gradient(135deg, var(--fg-accent) 0%, var(--fg-accent) 100%);
+  opacity: 0.9;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  background: linear-gradient(135deg, var(--fg-accent) 0%, #4a90e2 100%);
+}
+
+[data-bs-theme="dark"] .btn-primary:hover {
   background: linear-gradient(135deg, #4a90e2 0%, var(--fg-accent) 100%);
 }
 
@@ -231,6 +269,87 @@ body {
 .navbar {
   backdrop-filter: blur(10px);
   background-color: rgba(22, 27, 34, 0.9) !important;
+}
+
+[data-bs-theme="light"] .navbar {
+  background-color: rgba(248, 249, 250, 0.9) !important;
+}
+
+/* Light theme specific adjustments */
+[data-bs-theme="light"] .card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .login-card, 
+[data-bs-theme="light"] .register-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: none;
+}
+
+[data-bs-theme="light"] .form-control, 
+[data-bs-theme="light"] .form-select, 
+[data-bs-theme="light"] .input-group-text {
+  background-color: #ffffff;
+  border-color: #ced4da;
+}
+
+[data-bs-theme="light"] .form-control:focus, 
+[data-bs-theme="light"] .form-select:focus {
+  background-color: #ffffff;
+  border-color: var(--fg-accent);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.theme-toggle i {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover i {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Theme transition class */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: 
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Theme toggle animation keyframes */
+@keyframes themeToggle {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(0.8); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.theme-toggle.animating i {
+  animation: themeToggle 0.3s ease-in-out;
 }
 
 /* Improved tables */

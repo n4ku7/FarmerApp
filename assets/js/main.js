@@ -193,25 +193,49 @@ function clearSearchResults(targetSelector) {
   }
 }
 
-// Theme persistence
+// Theme persistence with smooth transitions
 function initializeThemePersistence() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-bs-theme', savedTheme);
-  }
+  // Get saved theme or default to dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-bs-theme', savedTheme);
   
   const themeToggle = document.querySelector('.theme-toggle');
   if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+    // Set initial icon based on saved theme
+    const icon = themeToggle.querySelector('i');
+    icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    
+    themeToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      
       const currentTheme = document.documentElement.getAttribute('data-bs-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
+      // Add transition class for smooth animation
+      document.body.classList.add('theme-transitioning');
+      
+      // Update theme
       document.documentElement.setAttribute('data-bs-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       
-      // Update toggle icon
-      const icon = themeToggle.querySelector('i');
-      icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      // Update toggle icon with animation
+      icon.style.transform = 'rotate(360deg) scale(0.8)';
+      setTimeout(() => {
+        icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        icon.style.transform = 'rotate(0deg) scale(1)';
+      }, 150);
+      
+      // Remove transition class after animation completes
+      setTimeout(() => {
+        document.body.classList.remove('theme-transitioning');
+      }, 300);
+      
+      // Show notification
+      utils.showNotification(
+        `Switched to ${newTheme === 'dark' ? 'dark' : 'light'} mode`, 
+        'success', 
+        2000
+      );
     });
   }
 }
