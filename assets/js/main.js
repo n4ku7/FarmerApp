@@ -195,8 +195,8 @@ function clearSearchResults(targetSelector) {
 
 // Theme persistence with smooth transitions
 function initializeThemePersistence() {
-  // Get saved theme or default to dark
-  const savedTheme = localStorage.getItem('theme') || 'dark';
+  // Get saved theme or default to light
+  const savedTheme = localStorage.getItem('theme') || 'light';
   
   // Apply theme using both data attribute and class for maximum compatibility
   document.documentElement.setAttribute('data-bs-theme', savedTheme);
@@ -212,7 +212,7 @@ function initializeThemePersistence() {
     themeToggle.addEventListener('click', (e) => {
       e.preventDefault();
       
-      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme') || 'light';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       
       // Add transition class for smooth animation

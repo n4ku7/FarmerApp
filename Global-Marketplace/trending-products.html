@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trending Products - Global Marketplace - AgriCraft</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/theme.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -21,18 +22,217 @@
             <li class="nav-item"><a class="nav-link active" href="#">Trending</a></li>
             <li class="nav-item"><a class="nav-link" href="search-filters.html">Filters</a></li>
           </ul>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary theme-toggle" type="button" data-bs-toggle="tooltip" title="Toggle theme">
+              <i class="fas fa-sun"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
     <main class="container py-5 min-h-main">
       <h1 class="page-header pb-3 mb-4">Trending Products</h1>
       <div class="row g-4">
-        <div class="col-md-3">
-          <div class="card h-100">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
             <div class="card-body">
-              <h2 class="h6">Strawberry Jam</h2>
-              <p class="muted">$9.99 • 1.2k sold</p>
-              <a class="btn btn-sm btn-primary" href="../Buyer-Dashboard/Product-Detail/index.html">View</a>
+              <div class="text-center mb-3">
+                <i class="fas fa-jar fa-3x text-success mb-2"></i>
+                <h5 class="card-title">Strawberry Jam</h5>
+                <p class="text-muted small">Handcrafted with organic strawberries</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$9.99</span>
+                <span class="badge bg-success">1.2k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-cheese fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Artisan Cheddar</h5>
+                <p class="text-muted small">Aged 12 months, farm-fresh</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$24.99</span>
+                <span class="badge bg-success">856 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-bread-slice fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Sourdough Bread</h5>
+                <p class="text-muted small">Traditional recipe, daily fresh</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$6.50</span>
+                <span class="badge bg-success">2.1k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-apple-alt fa-3x text-danger mb-2"></i>
+                <h5 class="card-title">Apple Cider</h5>
+                <p class="text-muted small">Fresh pressed, no preservatives</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$12.99</span>
+                <span class="badge bg-success">743 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-cookie-bite fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Honey Cookies</h5>
+                <p class="text-muted small">Made with local wildflower honey</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$8.99</span>
+                <span class="badge bg-success">1.5k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-leaf fa-3x text-success mb-2"></i>
+                <h5 class="card-title">Herbal Tea Blend</h5>
+                <p class="text-muted small">Chamomile, lavender, mint mix</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$15.99</span>
+                <span class="badge bg-success">634 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-egg fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Free-Range Eggs</h5>
+                <p class="text-muted small">Fresh from pasture-raised hens</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$4.99</span>
+                <span class="badge bg-success">3.2k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-seedling fa-3x text-success mb-2"></i>
+                <h5 class="card-title">Microgreens Mix</h5>
+                <p class="text-muted small">Nutrient-dense, harvested daily</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$7.99</span>
+                <span class="badge bg-success">987 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-wine-bottle fa-3x text-danger mb-2"></i>
+                <h5 class="card-title">Elderberry Syrup</h5>
+                <p class="text-muted small">Immune-boosting, organic</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$18.99</span>
+                <span class="badge bg-success">456 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-pepper-hot fa-3x text-danger mb-2"></i>
+                <h5 class="card-title">Hot Sauce</h5>
+                <p class="text-muted small">Ghost pepper blend, small batch</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$11.99</span>
+                <span class="badge bg-success">1.8k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-cookie fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Granola Bars</h5>
+                <p class="text-muted small">Oats, nuts, dried fruits</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$5.99</span>
+                <span class="badge bg-success">2.7k sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card product-card h-100">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <i class="fas fa-carrot fa-3x text-warning mb-2"></i>
+                <h5 class="card-title">Pickled Vegetables</h5>
+                <p class="text-muted small">Carrots, beets, cucumbers</p>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h6 text-primary mb-0">$13.99</span>
+                <span class="badge bg-success">723 sold</span>
+              </div>
+              <a class="btn btn-primary btn-sm w-100 mt-2" href="../Buyer-Dashboard/Product-Detail/index.html">View Details</a>
             </div>
           </div>
         </div>
@@ -40,6 +240,7 @@
     </main>
     <footer class="py-4 mt-5"><div class="container"><span class="muted">© 2025 AgriCraft</span></div></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
   </html>
 
